@@ -16,7 +16,7 @@ public class playerMovement : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !crouch)
         {
             jump = true;
         }
@@ -24,7 +24,8 @@ public class playerMovement : MonoBehaviour
         {
             crouch = true;
         }
-        else if (Input.GetButtonUp("Crouch")){
+        else if (Input.GetButtonUp("Crouch"))
+        {
             crouch = false;
         }
     }
